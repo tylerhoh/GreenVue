@@ -1,0 +1,6 @@
+[]Create Menu Component
+[]Create Signup Component
+[]Create Login Component
+[]Create Dashboard Component
+[]Create Account Settings Component
+[]Set up Router Guards
