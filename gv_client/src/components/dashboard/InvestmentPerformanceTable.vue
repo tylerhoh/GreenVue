@@ -4,7 +4,8 @@
   
   <script lang="ts" setup>
   import { QTableColumn } from 'quasar';
-  import { ref } from 'vue';
+  import { ref, onMounted } from 'vue';
+  import axios from 'axios';
   
   interface Investor {
     id: number;
@@ -49,4 +50,12 @@
   ];
   
   const investors = ref<Investor[]>([/* ... */]);
+    onMounted(async () => {
+  try {
+    const response = await axios.get('http://localhost:8080/api/investors');
+    investors.value = response.data;
+  } catch (error) {
+    console.error('Error fetching investors:', error);
+  }
+});
   </script>
